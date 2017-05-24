@@ -1,0 +1,543 @@
+body {
+    background-color: cornsilk;
+}
+
+section {
+    width: 960px;
+    height: 585px;
+    margin: auto;
+    position: relative;
+    text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.3);
+}
+h1 {
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 500;
+   text-align: center;
+   letter-spacing: 0.2em;
+   text-shadow: 3px 3px 5px #222222;
+   font-size: 58px;
+   color: #CFAD5D;
+}
+
+.wrapper{
+    width: 960px;
+    height: 758px;
+    margin: auto;
+    box-shadow: 0px 0px 40px 0px #515151;
+    position: relative;
+    top: 20px;
+}
+
+canvas{
+    position: relative;
+    z-index: 2;
+}
+
+div.panelTowers {
+    width: 955px;
+    height: 130px;
+    border: 3px #633a2c solid;
+    margin: auto;
+    background-image: url('../img/panelTowers2.jpg');
+    background-size: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+div.panelTowers .setTowers {
+    margin-top: 5px;
+    margin-left: 10px;
+    width: 340px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.towersIcon {
+    z-index: 5;
+    background-color: rgba(0, 150, 136, 0.32);
+    text-align: center;
+    height: 96px;
+    width: 70px;
+    border: 1px #795548 solid;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.towersIcon:hover {
+    box-shadow: 0px 0px 10px 0px #eeeeee;
+}
+
+#secondTowerIcon > img{
+     height: 80px;
+     margin-top: 10px;
+}
+#towerId11 {
+    height: 80px;
+    margin-top: 10px;
+}
+#upgradeTowerID {
+    height: 80px;
+    margin-top: 11px;
+}
+#mortarTower {
+    margin-top: 3px;
+}
+
+.imgPanel {
+    width: 200px;
+}
+.imgPanel img {
+    width: 200px;
+}
+.TowerInfo {
+    background-color: rgba(0, 150, 136, 0.317647);
+    border: 1px rgb(80, 61, 54) solid;
+    border-radius: 3px;
+    height: 113px;
+    width: 180px;
+    margin: 3px;
+    padding-top: 5px;
+}
+.TowerInfo > h4 {
+    margin-left: 10px;
+    margin-bottom: 4px;
+}
+
+
+.cell {
+    width: 58px;
+    border: 1px rgba(255, 255, 255, 0.54) solid;
+    height: 43px;
+    margin:0;
+    z-index: 1;
+}
+.grid {
+    margin-top: -595px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 960px;
+    height: 585px;
+    opacity: 1;
+}
+.hideImage {
+    display: none;
+}
+
+#mapInfo {
+    margin-right: 0px;
+    border: 1px black solid;
+    padding: 20px;
+    height: 50px;
+    width: 50px;
+}
+#gold {
+    display: flex;
+}
+#hitPoint {
+    margin-bottom: 20px;
+    display: flex;
+}
+#goldCounter {
+    margin-left: 10px;
+    margin-right: 20px;
+}
+#LvlBlock {
+    display: flex;
+}
+#lvlID {
+    margin-left: 7px;
+}
+
+.cost-tower {
+    margin-top: 2px;
+    display: flex;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+.cost-tower img {
+    width: 20px;
+    height: 15px;
+    margin-right: 3px;
+}
+.cost-tower h4 {
+    font-family: 'Arial';
+    position: absolute;
+    top: 733px;
+    margin-left: 25px;
+    color: #101010;
+    text-shadow: 0px 0px 7px #aaaaaa;
+}
+
+
+section.topInfoPanel {
+    font-family: 'Helvetica';
+    font-weight: normal;
+    height: 30px;
+    width: 938px;
+    background-color: rgb(166, 177, 60);
+    opacity: 0.8;
+    border: 2px rgba(58, 22, 11, 0.58) solid;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px 0 10px;
+}
+
+.MonsterInfo {
+    display: flex;
+}
+.MonsterInfo img {
+    width: 30px;
+    height: 30px;
+}
+.WaveInfo {
+    display: flex;
+}
+.HitPoint {
+    display: flex;
+}
+#hpCounter {
+    margin-left: 10px;
+}
+#wavesCount {
+    margin-left: 10px;
+}
+#leftEnemies {
+    margin-left: 10px;
+}
+
+#myProgress {
+    width: 150px;
+    height: 25px;
+    background-color: green;
+    border: 1px black solid;
+    border-radius: 3px;
+}
+#myProgress h4 {
+    margin-top: 3px;
+    text-align: center;
+}
+#myBar {
+    width: 0%;
+    height: 100%;
+    background-color: gray;
+}
+
+.showGrid {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    z-index: 5;
+}
+
+.pause {
+    height: 30px;
+    width: 50px;
+    margin-left: 10px;
+    position: absolute;
+    top: 5px;
+    z-index: 5;
+}
+
+.box{
+    width: 20px;
+    height: 20px;
+    border-top:2px solid #fff;
+    border-radius:50%;
+    margin:10px auto 50px;
+    background-color:#EEEEEE;
+    background: linear-gradient(#EDEAE1,#CDC8B5);
+    text-align:center;
+    box-shadow:
+        0 5px 2px 3px rgba(158, 158, 158, 0.4),
+        0 3px 5px #B7B6B6,
+        0 0 0 2px #BBB7AE,
+    inset 0 -3px 1px 2px rgba(186, 178, 165, 0.5),
+    inset 0 3px 1px 2px rgba(246, 245, 241, 0.3);
+    cursor:pointer;
+    position:relative;
+}
+.box:active{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-top: none;
+    border: 2px solid #BAB7AE;
+    background-color: #EEEEEE;
+    text-align: center;
+    position: relative;
+    color: #BAB7AE;
+    font-size: 64px;
+    line-height: 100px;
+    text-shadow:
+        0 1px 1px white,
+        0 1px 1px #BAB7AE;
+    box-shadow:  0 0 0 0 #BBB7AE;
+}
+
+
+.btnStart {
+    width: 400px;
+    height: 100px;
+    padding-top: 0px;
+    background-color: rgba(84, 117, 46, 0.73);
+    border: 3px #482e25 solid;
+    border-radius: 5px;
+    position: absolute;
+    top: 230px;
+    margin-left: 300px;
+    z-index: 5;
+    box-shadow: 0px 0px 25px 0px #483E52;
+}
+
+.btnStart:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 25px 0px;
+}
+
+.btnStart:active {
+    margin-left: 305px;
+    width: 390px;
+    height: 95px;
+    font-size: 95%;
+}
+.btnStart p {
+    font-size: 500%;
+    text-align: center;
+    color: #402a22;
+}
+
+.btnLose {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding-top: 0px;
+    background-color: rgba(84, 117, 46, 0.73);
+    border-radius: 5px;
+    position: absolute;
+    top: 0px;
+    z-index: 5;
+    text-align: center;
+}
+.btnLose p {
+    margin-top: 50px;
+    font-size: 25px;
+    color: white;
+}
+
+.btnLose:hover {
+    cursor: pointer;
+}
+
+.btnNext, .btnNext {
+    top: 0px;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: none;
+    padding-top: 0px;
+    position: absolute;
+    text-align: center;
+    border-radius: 5px;
+    letter-spacing: 0.2em;
+    line-height: 31px;
+    font-family: 'Lato', arial, sans-serif;
+    background-color: rgba(84, 117, 46, 0.73);
+    text-shadow: 0px 0px 10px #eeeeee;
+}
+
+.btnNext:hover {
+    cursor: pointer;
+}
+
+.btnNext p:first-child {
+    margin-top: 170px;
+}
+
+.btnNext p {
+    margin-top: 15px;
+    font-size: 25px;
+    color: white;
+}
+
+.btnLose p:first-child {
+    margin-top: 200px;
+}
+
+.noMoneyText {
+    margin-top: 30px;
+    display: none;
+}
+.noMoneyText p {
+    margin-top: 15px;
+    font-size: 150%;
+    color: #444;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.15em;
+}
+
+.btnPause {
+    width: 20px;
+    height: 25px;
+    border: 3px rgba(205, 220, 57, 0.78) solid;
+    border-radius: 15px;
+    display: flex;
+    padding-left: 5px;
+    cursor: pointer;
+}
+.btnPause div {
+    width: 4px;
+    height: 20px;
+    margin-top: 2px;
+    background-color: rgba(205, 220, 57, 0.78);
+    margin-left: 2px;
+    border-radius: 2px;
+}
+
+.btnPlay {
+    width: 20px;
+    height: 25px;
+    border: 3px rgba(205, 220, 57, 0.78) solid;
+    border-radius: 15px;
+    padding-left: 5px;
+    cursor: pointer;
+    display: none;
+}
+#triangle-right {
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-left: 15px solid rgba(205, 220, 57, 0.78);
+	border-bottom: 10px solid transparent;
+    border-radius: 3px;
+    margin: 2px 0 0 2px;
+}
+
+.gameIsPausedText {
+    z-index: 6;
+    display: none;
+    display: none;
+    position: absolute;
+    top: 230px;
+    left: 245px;
+    font-size: 417%;
+    color: #cccccc;
+    letter-spacing: 0.7em;
+    text-shadow: 3px 0px 10px #555555;
+    z-index: 6;
+}
+
+
+
+/*************   UPGRADE PANEL TOWER  ***************/
+.block_inset {
+    position: absolute;
+    top: 0px;
+    left: 960px;
+    width: 220px;
+    height: 110%;
+    overflow-x: hidden;
+}
+
+.inset_content {
+    position: relative;
+    margin: 0px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: rgba(155, 255, 40, 0.42);
+    overflow-y: auto;
+    border: 4px black solid;
+}
+.reltr {
+    z-index: 2;
+    left: 0px;
+    width: 0px;
+    height: 91%;
+    position: absolute;
+    background: #b5b5b5;
+    top: 0;
+}
+
+
+.upgrade_tower {
+    position: absolute;
+    left: 0px;
+    top: 35px;
+    width: 200px;
+    overflow: hidden;
+    z-index: 10;
+    pointer-events: none;
+}
+.slide_panel {
+    margin-left: -201px;
+    padding: 5px;
+    padding-right: 8px;
+    width: 160px;
+    height: 420px;
+    position: relative;
+    top: 0;
+    left: 0;
+    border: 2px solid black;
+    background-color: rgba(90, 128, 47, 0.83);
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 2px;
+}
+.slide_panel p.open {
+    padding: 3px 5px;
+    position: absolute;
+    top: 10px;
+    left: 200px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.TowerContent {
+    border: 2px solid black;
+    height: 175px;
+    width: 100%;
+    position: relative;
+    border-radius: 3px;
+    background-color: rgba(255, 238, 92, 0.51);
+}
+.TowerContent h3 {
+    margin: 80px 0 0 35px;
+}
+.TowerContent h4 {
+    margin-left: 6px;
+}
+.TowerContent img {
+    margin-left: 40px;
+    width: 60px;
+    height: 90px;
+}
+.btnUpgrade {
+    display: flex;
+    font-family: cursive;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 125px;
+    height: 23px;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 6px;
+    cursor: pointer;
+    background-color: rgba(76, 175, 80, 0.97);
+}
+.btnUpgrade h4 {
+    margin-bottom: 10px;
+}
+.btnUpgrade img {
+    width: 18px;
+    height: 18px;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+.btnUpgrade:active {
+    margin-top: 13px;
+}

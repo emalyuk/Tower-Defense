@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css"> -->
+    <title>GAME</title>
+</head>
+<body>
+    <h1>TOWER DEFENSE</h1>
+    <div class="wrapper">
+        <section class="topInfoPanel" id="topInfoPanelID">
+            <div class="MonsterInfo" id="MonsterInfoID">
+                <img src="img/MonsterHead2.png" alt="Killed enemies">
+                <h3 id="leftEnemies">0</h3>
+            </div>
+            <div class="WaveInfo" id="WaveInfoID">
+                <h3>Wave:</h3>
+                <h3 id="wavesCount">1</h3>
+            </div>
+            <div id="LvlBlock">
+                <h3>Level: </h3>
+                <h3 id="lvlID"></h3>
+            </div>
+            <div id="gold">
+                <img src="img/gold.png" alt="gold">
+                <h3 id="goldCounter"></h3>
+            </div>
+            <div id="myProgress">
+                <div id="myBar"></div>
+            </div>
+        </section>
+
+        <section id="section">
+            <canvas id='canvas'></canvas>
+            <!-- изображения таверов которые не отобржаются. Отсюда мы бедем их по id -->
+            <img class="hideImage" id="notShowImage1" src="img/tower11.png">
+            <img class="hideImage" id="notShowImage2" src="img/tower.png">
+            <img class="hideImage" id="notShowImage3" src="img/Cannon1.png">
+            <img class="hideImage" id="notShowImage4" src="img/mortar1.png">
+            <div class="grid" id="gridMap"></div>
+
+            <div class="showGrid" id="showGrid">
+                <div class="box" id='boxShowGrid'> <span></span> </div>
+            </div>
+
+            <div class="pause" id="pauseID">
+                <div class='btnPause' id="btnPauseID">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="btnPlay" id="btnPlayID">
+                    <div id="triangle-right"></div>
+                </div>
+            </div>
+            <h1 class="gameIsPausedText" id="gameIsPausedTextID">PAUSED</h1>
+            <div class="btnStart" id="btnStartID">
+                <p>Start</p>
+            </div>
+            <div class="btnLose" id="btnLose">
+                <p>This time zombies won.
+                <p>Click to try again.</p>
+            </div>
+            <div class="btnNext" id="btnNext">
+                <p>Mission complete!</p>
+                <p id="killedStat">Killed zombies: </p>
+                <p id="passedStat">Missed zombies: </p>
+                <p>Click anywhere for continue.</p>
+            </div>
+
+            <div class="upgrade_tower">
+                <div class="slide_panel">
+                    <div class="TowerContent" id="ourTowerID">
+                    </div>
+                    <div class="btnUpgrade" id="btnUpgradeID">
+                        <h4 id="btnTextUpgrade">UPGRADE</h4>
+                        <img src="img/gold.png" alt="gold">
+                        <h4 id="costUpgrade"></h4>
+                    </div>
+                    <div class="TowerContent" id="upTowerID">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="panelTowers">
+            <article class="setTowers" id="setTowersID">
+                <div class="towersIcon" id="firstTowerIcon" name="tower-icon">
+                    <img src="img/tower11.png" id="towerId11" alt="Tower">
+                    <div class="cost-tower">
+                        <img src="img/gold.png" alt="gold">
+                        <h4 id="cost-tower1">50</h4>
+                    </div>
+                </div>
+                <div class="towersIcon" id="secondTowerIcon" name="tower-icon">
+                    <img src="img/tower.png" alt="Brick Tower">
+                    <div class="cost-tower">
+                        <img src="img/gold.png" alt="gold">
+                        <h4 id="cost-tower2">100</h4>
+                    </div>
+                </div>
+                <div class="towersIcon" id="thirdTowerIcon" name="tower-icon">
+                    <img src="img/Cannon1.png" id="upgradeTowerID" alt="Upgrade Brick Tower">
+                    <div class="cost-tower">
+                        <img src="img/gold.png" alt="gold">
+                        <h4 id="cost-tower3">150</h4>
+                    </div>
+                </div>
+                <div class="towersIcon" id="fourthTowerIcon" name="tower-icon">
+                    <img src="img/mortar1.png" id="mortarTower" alt="Mortar">
+                    <div class="cost-tower">
+                        <img src="img/gold.png" alt="gold">
+                        <h4 id="cost-tower4">200</h4>
+                    </div>
+                </div>
+            </article>
+
+            <article class="noMoneyText" id="noMoneyTextID">
+                <p>You need more money!</p>
+            </article>
+
+            <article class='TowerInfo' id='TowerInfoID'>
+                <h4 id="classTower">Tower: </h4>
+                <h4 id="Damage">Damage: </h4>
+                <h4 id="Range">Range: </h4>
+                <h4 id="Cost">Cost: </h4>
+                <h4 id="Speed">Attack speed: </h4>
+            </article>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script src="js/init-map.js" charset="utf-8"></script>
+    <script src="js/logic.js"></script>
+    <script src="js/maps/level1.js"></script>
+    <script src="js/maps/level2.js"></script>
+    <script src="js/maps/level3.js"></script>
+    <script src="js/maps/level4.js"></script>
+    <script src="js/maps/level5.js"></script>
+    <script src="js/rendering.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/towers.js" charset="utf-8"></script>
+    <script src="js/bullets.js" charset="utf-8"></script>
+    <script src="js/placing.js" charset="utf-8"></script>
+    <script src="js/grid.js"></script>
+    <script src="js/upgradeTower.js"></script>
+
+    <script>
+        let canvas = document.getElementById('canvas');
+        canvas.width = 960;
+        canvas.height = 585;
+        map1();
+        gridFunc();
+        window.onload = function() {
+            let btnStart = document.getElementById('btnStartID');
+            btnStart.onclick = function() {
+                $('#btnStartID').hide();
+                start();
+                timeId = setTimeout(mainLoopLogic, 1000/FPS);
+            }
+        };
+    </script>
+</body>
+</html>
